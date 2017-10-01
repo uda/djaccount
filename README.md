@@ -13,13 +13,10 @@ INSTALLED_APPS = [
     'account',
     # some more custom apps here
 ]
-
 AUTH_USER_MODEL = 'account.Account'
-
 LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/account/'
 LOGOUT_REDIRECT_URL = '/'
-
 ```
 
 3. Add the account URLs to your `urls.py` file
