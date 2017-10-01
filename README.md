@@ -34,6 +34,6 @@ Account app for the Django framework provides an email based user object
 
 ## License
 
-See [LICENSE]
+See [LICENSE](LICENSE)
 
 Some of the work was made as part of my job at [Sync.me](https://sync.me)
