@@ -7,7 +7,7 @@ def read(filename):
 
 
 setup(
-    name='Django Account',
+    name='djaccount',
     version='0.0.1-alpha1',
     description='Django account manager',
     author='Yehuda Deutsch',
