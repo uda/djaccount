@@ -8,7 +8,7 @@ def read(filename):
 
 setup(
     name='djaccount',
-    version='0.0.3-alpha1',
+    version='0.0.3-alpha2',
     description='Django account manager',
     author='Yehuda Deutsch',
     author_email='yeh@uda.co.il',
