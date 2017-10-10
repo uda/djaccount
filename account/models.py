@@ -61,8 +61,8 @@ class Account(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['first_name', 'last_name']
 
     class Meta:
-        verbose_name = _('user')
-        verbose_name_plural = _('users')
+        verbose_name = _('account')
+        verbose_name_plural = _('accounts')
 
     def get_absolute_url(self):
         return reverse('account:view-one', None, (self.id,))
