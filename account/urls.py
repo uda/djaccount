@@ -12,6 +12,8 @@ from django.contrib.auth.views import (
 
 from .views import AccountView
 
+app_name = 'account'
+
 urlpatterns = [
     url(r'^$', AccountView.as_view(), name='view'),
     url(r'^(?P<pk>\d+)/$', AccountView.as_view(), name='view-one'),
