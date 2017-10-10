@@ -15,6 +15,7 @@ from .views import AccountView
 urlpatterns = [
     url(r'^$', AccountView.as_view(), name='view'),
     url(r'^(?P<pk>\d+)/$', AccountView.as_view(), name='view-one'),
+    url(r'^profile/$', AccountView.as_view(), name='profile'),
 
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout', kwargs={'next_page': '/'}),
