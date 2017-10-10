@@ -6,4 +6,4 @@ from .models import Account
 class AccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Account
-        fields = ('url', 'username', 'email', 'is_staff')
+        fields = ('email', 'first_name', 'last_name', 'is_staff', 'date_joined')
