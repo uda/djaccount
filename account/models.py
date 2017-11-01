@@ -65,3 +65,20 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.get_full_name() or self.get_username()
+
+
+class EmailValidation(models.Model):
+    account = models.ForeignKey(Account, related_name='email_validations')
+    email = models.CharField(max_length=254)
+    key = models.CharField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['account', 'email'], name='account_email_idx'),
+            models.Index(fields=['key'], name='key_idx'),
+        ]
