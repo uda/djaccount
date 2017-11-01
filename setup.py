@@ -8,7 +8,7 @@ def read(filename):
 
 setup(
     name='djaccount',
-    version='0.0.5-alpha1',
+    version='0.0.5-beta1',
     description='Django account manager',
     author='Yehuda Deutsch',
     author_email='yeh@uda.co.il',
@@ -19,7 +19,7 @@ setup(
     packages=find_packages(),
     long_description=read('README.md'),
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Framework :: Django :: 1.11',
