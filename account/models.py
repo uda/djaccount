@@ -1,5 +1,5 @@
 """
-Look at this: https://docs.djangoproject.com/en/1.11/topics/auth/customizing/
+Look at this: https://docs.djangoproject.com/en/2.0/topics/auth/customizing/
 """
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
