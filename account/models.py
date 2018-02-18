@@ -68,7 +68,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
 
 class EmailValidation(models.Model):
-    account = models.ForeignKey(Account, related_name='email_validations')
+    account = models.ForeignKey(Account, related_name='email_validations', on_delete=models.CASCADE)
     email = models.CharField(max_length=254)
     key = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
