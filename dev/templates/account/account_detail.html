@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div>
+        <dl>
+            <dt>{% trans 'ID' %}:</dt>
+            <dd>{{ account.id }}</dd>
+            <dt>{% trans 'Name' %}:</dt>
+            <dd>{{ account }}</dd>
+            <dt>{% trans 'Email' %}:</dt>
+            <dd>{{ account.email }}</dd>
+            <dt>{% trans 'Is active' %}:</dt>
+            <dd>{{ account.is_active }}</dd>
+            <dt>{% trans 'Is staff' %}:</dt>
+            <dd>{{ account.is_staff }}</dd>
+            <dt>{% trans 'Is superuser' %}:</dt>
+            <dd>{{ account.is_superuser }}</dd>
+        </dl>
+    </div>
+{% endblock %}

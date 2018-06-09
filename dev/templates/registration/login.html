@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block content %}
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {% if form.errors %}
+            <p>
+                {% if form.errors.items|length == 1 %}
+                Please correct the error below.
+                {% else %}
+                Please correct the errors below.
+                {% endif %}
+            </p>
+            {% endif %}
+
+            <div>
+                {{ form.username.errors }}
+                {{ form.username.label_tag }} {{ form.username }}
+                {% if form.username.help_text %}
+                <div>{{ form.username.help_text|safe }}</div>
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form.password.errors }}
+                {{ form.password.label_tag }} {{ form.password }}
+                {% if form.password.help_text %}
+                <div>{{ form.password.help_text|safe }}</div>
+                {% endif %}
+            </div>
+
+            <div>
+                <input type="submit" value="{% trans 'Login' %}" class="default"/>
+            </div>
+
+        </div>
+    </form>
+</div>
+{% endblock %}
