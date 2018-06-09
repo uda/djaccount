@@ -1,14 +1,17 @@
-import os
 from setuptools import setup, find_packages
 
+from account import __version__
 
-def read(filename):
-    return open(os.path.join(os.path.dirname(__file__), filename)).read()
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except(IOError, ImportError):
+    long_description = open('README.md').read()
 
 
 setup(
     name='djaccount',
-    version='0.0.5-beta1',
+    version=__version__,
     description='Django account manager',
     author='Yehuda Deutsch',
     author_email='yeh@uda.co.il',
@@ -16,13 +19,13 @@ setup(
     license='MIT',
     url='https://gitlab.com/uda/djaccount',
     keywords='django account',
-    packages=find_packages(),
-    long_description=read('README.md'),
+    packages=find_packages(exclude=('dev',)),
+    long_description=long_description,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.11',
+        'Framework :: Django :: 2.0',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
@@ -34,4 +37,8 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: System :: Systems Administration :: Authentication/Directory',
     ],
+    extras_require={
+        'dev': ['django>=2.0'],
+    },
+    python_requires='>=3.6',
 )
