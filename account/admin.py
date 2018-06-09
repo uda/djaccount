@@ -6,6 +6,7 @@ from account.models import Account
 from account.forms import AccountChangeForm, AccountCreationForm
 
 
+@admin.register(Account)
 class AccountAdmin(UserAdmin):
     # The forms to add and change user instances
 
@@ -30,6 +31,3 @@ class AccountAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
     search_fields = ('email', 'first_name', 'last_name')
     ordering = ('email',)
-
-
-admin.site.register(Account, AccountAdmin)
