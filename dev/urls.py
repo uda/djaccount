@@ -1,9 +1,10 @@
-from django.conf.urls import url, include
+from django.conf.urls import include
 from django.contrib import admin
 from django.contrib.staticfiles.views import serve
+from django.urls import path
 
 urlpatterns = [
-    url(r'^account/', include('account.urls', namespace='account')),
-    url(r'^admin/', admin.site.urls),
-    url(r'^static/(?P<path>.*)$', serve, name='static'),
+    path('account/', include('account.urls', namespace='account')),
+    path('admin/', admin.site.urls),
+    path('static/<path:path>', serve, name='static'),
 ]
