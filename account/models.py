@@ -38,8 +38,8 @@ class Account(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['first_name', 'last_name']
 
     class Meta:
-        verbose_name = _('account')
-        verbose_name_plural = _('accounts')
+        verbose_name = _('Account')
+        verbose_name_plural = _('Accounts')
 
     def get_absolute_url(self):
         return reverse('account:view-one', None, (self.id,))
@@ -65,20 +65,3 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.get_full_name() or self.get_username()
-
-
-class EmailValidation(models.Model):
-    account = models.ForeignKey(Account, related_name='email_validations', on_delete=models.CASCADE)
-    email = models.CharField(max_length=254)
-    key = models.CharField(max_length=255)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.email
-
-    class Meta:
-        indexes = [
-            models.Index(fields=['account', 'email'], name='account_email_idx'),
-            models.Index(fields=['key'], name='key_idx'),
-        ]
